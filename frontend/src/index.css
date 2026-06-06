@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f5f0e8;
+    color: #0d0d0d;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ink text-paper font-display font-semibold px-6 py-3 text-sm tracking-wide
+           hover:bg-accent transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-paper;
+  }
+  .btn-ghost {
+    @apply border border-ink/20 text-ink font-body text-sm px-6 py-3
+           hover:border-ink hover:bg-ink hover:text-paper transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-ink/30;
+  }
+  .input-field {
+    @apply w-full bg-transparent border-b border-ink/20 py-3 px-0 text-ink placeholder-muted
+           font-body text-sm focus:outline-none focus:border-ink transition-colors duration-200;
+  }
+  .card {
+    @apply bg-surface border border-ink/10 p-6;
+  }
+  .tag {
+    @apply inline-block font-mono text-xs px-2 py-1 bg-ink text-paper;
+  }
+  .tag-accent {
+    @apply inline-block font-mono text-xs px-2 py-1 bg-accent text-paper;
+  }
+}
